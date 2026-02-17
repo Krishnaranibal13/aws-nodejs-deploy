@@ -9,14 +9,18 @@ app.get('/api/get',(req,res) => {
 app.get('/api/get_user_details',(req,res) => {
     res.send({
         user:{
-            name:"satyam",
-            age:22,
+            name:"Krishna",
+            age:24,
             contact:12254
         },env:process.env.NAME
     })
 });
 
 
-app.listen(process.env.PORT,() => {
-    console.log("listening to 8000");
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server listening on ${PORT}`);
+})
+
 })
